@@ -1,3 +1,5 @@
+use core::num;
+
 fn factorial(num: u64) -> u64 {
     // TODO: Complete this function to return the factorial of `num` which is
     // defined as `1 * 2 * 3 * … * num`.
@@ -10,6 +12,8 @@ fn factorial(num: u64) -> u64 {
     // - additional variables
     // For an extra challenge, don't use:
     // - recursion
+    Vec::from_iter(1..num + 1).iter().fold(1, |acc, e| acc * e)
+    // Vec::from_iter(1..num + 1).iter().product::<u64>()
 }
 
 fn main() {
